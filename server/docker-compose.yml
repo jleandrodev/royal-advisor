@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db-royal-advisor: 
+    image: postgres:alpine
+    ports:
+      - "2222:5432"
+    container_name: "db-postgres-ra"
+    restart: always
+    volumes: 
+      - ./db-royal-advisor:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+volumes:
+  db-royal-advisor:
